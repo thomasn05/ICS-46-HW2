@@ -30,5 +30,5 @@ All submissions are done on [GradeScope](https://www.gradescope.com/).
 
 On GradeScope, go into your Account Settings, and link your GitHub account to GradeScope.
 
-Then on the course GradeScope, go to the **Homework 1** assignment, press the Submit button, choose the GitHub option, and select your project and branch.
+Then on the course GradeScope, go to the **Homework 2** assignment, press the Submit button, choose the GitHub option, and select your project and branch.
 
