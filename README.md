@@ -1,9 +1,9 @@
-# ICS 46 Homework 1
+# ICS 46 Homework 2
 
-For Homework 1, we will be programming class string.
+For Homework 2, we will be implementing an unordered list.
 
 **Links**
-- [Instructions](https://sites.google.com/view/ics-46-data-structures/homework-1)
+- [Instructions](https://sites.google.com/view/ics-46-data-structures/homework-2)
 - [HW0 Environment Setup](https://github.com/klefstad-teaching/ICS-45C-HW0)
 
 ## Local GTests
