@@ -21,3 +21,19 @@ bool UnorderedArrayList::is_full()
 {
     return this->size >= this->capacity;
 }
+
+void UnorderedArrayList::print(ostream &out)
+{
+    out << '[';
+    for (int i = 0; i < this->size; i++)
+    {
+        out << this->buf[i] << " ";
+    }
+    out << ']';
+}
+
+ostream &operator<<(ostream &out, UnorderedList &L)
+{
+    L.print(out);
+    return out;
+}

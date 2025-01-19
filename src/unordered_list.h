@@ -12,7 +12,7 @@ struct UnorderedList
     // virtual void remove(const string &word) = 0;
     virtual bool is_empty() = 0;
     virtual bool is_full() = 0;
-    // virtual void print(ostream &out) = 0;
+    virtual void print(ostream &out) = 0;
     UnorderedList(const UnorderedList &L) = delete;
     UnorderedList &operator=(const UnorderedList &L) = delete;
     virtual ~UnorderedList() {}
@@ -28,13 +28,13 @@ private:
 
 public:
     UnorderedArrayList(int cap = NWORDS);
+    ~UnorderedArrayList() override;
     // void insert(const string &word);
     // bool find(const string &word);
     // void remove(const string &word);
     bool is_empty() override;
     bool is_full() override;
-    // void print(ostream &out);
-    ~UnorderedArrayList() override;
+    void print(ostream &out) override;
 };
 
 // struct ListNode
@@ -64,7 +64,7 @@ public:
 //     ~UnorderedLinkedList();
 // };
 
-// ostream &operator<<(ostream &out, UnorderedList &L);
+ostream &operator<<(ostream &out, UnorderedList &L);
 
 // void error(string word, string msg);
 // void insert_all_words(int k, string file_name, UnorderedList &L);
