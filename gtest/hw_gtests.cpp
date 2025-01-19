@@ -7,16 +7,28 @@
 
 // Include all of your *.h files you want to unit test:
 
-
 #include <gtest/gtest.h>
+#include "../src/unordered_list.h"
 
-namespace {
+namespace
+{
 
-TEST(Hello, World) {
-  EXPECT_TRUE(true);
-}
+    TEST(UnorderedArrayList, IsEmpty)
+    {
+        UnorderedArrayList x;
+        EXPECT_TRUE(x.is_empty());
+    }
 
-// ADD YOUR TESTS HERE:
-
+    TEST(UnorderedArrayList, IsFull)
+    {
+        UnorderedArrayList x;
+        EXPECT_FALSE(x.is_full());
+    }
 
 } // anonymous namespace
+
+int main(int argc, char **argv)
+{
+    testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
+}
