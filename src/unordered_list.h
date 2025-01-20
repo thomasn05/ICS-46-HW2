@@ -38,32 +38,32 @@ public:
     void print(ostream &out) override;
 };
 
-// struct ListNode
-// {
-//     string data;
-//     ListNode *next;
-//     ListNode(string new_data, ListNode *new_next) : data(new_data), next(new_next) {}
-//     static void print(ostream &out, ListNode *L);
-//     static Listnode *find(const string &word, ListNode *L);
-//     static void delete_list(ListNode *L);
-//     static void remove(const string &word, ListNode *&L);
-// };
+struct ListNode
+{
+    string data;
+    ListNode *next;
+    ListNode(string new_data, ListNode *new_next) : data(new_data), next(new_next) {}
+    static void print(ostream &out, ListNode *L);
+    // static Listnode *find(const string &word, ListNode *L);
+    // static void delete_list(ListNode *L);
+    // static void remove(const string &word, ListNode *&L);
+};
 
-// class UnorderedLinkedList : public UnorderedList
-// {
-// private:
-//     ListNode *head;
+class UnorderedLinkedList : public UnorderedList
+{
+private:
+    ListNode *head;
 
-// public:
-//     UnorderedLinkedList();
-//     void insert(const string &word);
-//     bool find(const string &word);
-//     void remove(const string &word);
-//     bool is_empty();
-//     bool is_full();
-//     void print(ostream &out);
-//     ~UnorderedLinkedList();
-// };
+public:
+    UnorderedLinkedList() : UnorderedList("UnorderedLinkedList"), head(nullptr) {}
+    ~UnorderedLinkedList();
+    // void insert(const string &word);
+    // bool find(const string &word);
+    // void remove(const string &word);
+    // bool is_empty();
+    // bool is_full();
+    void print(ostream &out);
+};
 
 ostream &operator<<(ostream &out, UnorderedList &L);
 

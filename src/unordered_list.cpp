@@ -66,3 +66,27 @@ ostream &operator<<(ostream &out, UnorderedList &L)
     L.print(out);
     return out;
 }
+
+void ListNode::print(ostream &out, ListNode *L)
+{
+    out << L->data;
+}
+
+UnorderedLinkedList::~UnorderedLinkedList()
+{
+    while (this->head)
+    {
+        ListNode *temp = this->head;
+        this->head = head->next;
+        delete temp;
+    }
+}
+
+void UnorderedLinkedList::print(ostream &out)
+{
+    while (this->head)
+    {
+        ListNode::print(out, this->head);
+        this->head = head->next;
+    }
+}
