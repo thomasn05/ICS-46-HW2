@@ -57,7 +57,7 @@ private:
 public:
     UnorderedLinkedList() : UnorderedList("UnorderedLinkedList"), head(nullptr) {}
     ~UnorderedLinkedList();
-    // void insert(const string &word);
+    void insert(const string &word);
     // bool find(const string &word);
     // void remove(const string &word);
     // bool is_empty();

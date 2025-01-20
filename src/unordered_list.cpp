@@ -82,6 +82,11 @@ UnorderedLinkedList::~UnorderedLinkedList()
     }
 }
 
+void UnorderedLinkedList::insert(const string &word)
+{
+    this->head = new ListNode(word, this->head);
+}
+
 void UnorderedLinkedList::print(ostream &out)
 {
     while (this->head)
