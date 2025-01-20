@@ -87,6 +87,18 @@ void UnorderedLinkedList::insert(const string &word)
     this->head = new ListNode(word, this->head);
 }
 
+bool UnorderedLinkedList::is_empty()
+{
+    if (!this->head)
+        return 1;
+    return 0;
+}
+
+bool UnorderedLinkedList::is_full()
+{
+    return 0;
+}
+
 void UnorderedLinkedList::print(ostream &out)
 {
     while (this->head)
