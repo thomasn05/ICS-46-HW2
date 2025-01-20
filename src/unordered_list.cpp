@@ -32,6 +32,17 @@ bool UnorderedArrayList::find(const string &word)
     return this->find_index(word) >= 0;
 }
 
+void UnorderedArrayList::remove(const string &word)
+{
+    int index = this->find_index(word);
+
+    if (index)
+    {
+        this->buf[index] = this->buf[this->size - 1];
+        this->size--;
+    }
+}
+
 bool UnorderedArrayList::is_empty()
 {
     return this->size == 0;
