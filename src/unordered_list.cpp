@@ -1,6 +1,16 @@
 // #include "Timer.h"
 #include "unordered_list.h"
 
+int UnorderedArrayList::find_index(const string &word)
+{
+    for (int i = 0; i < this->size; i++)
+    {
+        if (this->buf[i] == word)
+            return i;
+    }
+    return -1;
+}
+
 UnorderedArrayList::UnorderedArrayList(int cap)
     : UnorderedList("Unordered_Array_List"), capacity(cap), size(0)
 {
@@ -15,6 +25,11 @@ UnorderedArrayList::~UnorderedArrayList()
 void UnorderedArrayList::insert(const string &word)
 {
     this->buf[this->size++] = word;
+}
+
+bool UnorderedArrayList::find(const string &word)
+{
+    return this->find_index(word) >= 0;
 }
 
 bool UnorderedArrayList::is_empty()

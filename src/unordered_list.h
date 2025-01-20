@@ -9,7 +9,7 @@ struct UnorderedList
     UnorderedList(const string &new_name)
         : name(new_name) {}
     virtual void insert(const string &word) = 0;
-    // virtual bool find(const string &word) = 0;
+    virtual bool find(const string &word) = 0;
     // virtual void remove(const string &word) = 0;
     virtual bool is_empty() = 0;
     virtual bool is_full() = 0;
@@ -25,13 +25,13 @@ private:
     int capacity;
     int size;
     string *buf;
-    // int find_index(const string &word);
+    int find_index(const string &word);
 
 public:
     UnorderedArrayList(int cap = NWORDS);
     ~UnorderedArrayList() override;
     void insert(const string &word);
-    // bool find(const string &word);
+    bool find(const string &word);
     // void remove(const string &word);
     bool is_empty() override;
     bool is_full() override;
