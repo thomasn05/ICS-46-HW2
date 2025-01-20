@@ -1,4 +1,5 @@
 #include <string>
+#include <iostream>
 using namespace std;
 constexpr int NWORDS = 45392;
 
@@ -7,7 +8,7 @@ struct UnorderedList
     const string name;
     UnorderedList(const string &new_name)
         : name(new_name) {}
-    // virtual void insert(const string &word) = 0;
+    virtual void insert(const string &word) = 0;
     // virtual bool find(const string &word) = 0;
     // virtual void remove(const string &word) = 0;
     virtual bool is_empty() = 0;
@@ -29,7 +30,7 @@ private:
 public:
     UnorderedArrayList(int cap = NWORDS);
     ~UnorderedArrayList() override;
-    // void insert(const string &word);
+    void insert(const string &word);
     // bool find(const string &word);
     // void remove(const string &word);
     bool is_empty() override;

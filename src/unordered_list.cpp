@@ -12,6 +12,11 @@ UnorderedArrayList::~UnorderedArrayList()
     delete[] this->buf;
 }
 
+void UnorderedArrayList::insert(const string &word)
+{
+    this->buf[this->size++] = word;
+}
+
 bool UnorderedArrayList::is_empty()
 {
     return this->size == 0;
@@ -24,12 +29,10 @@ bool UnorderedArrayList::is_full()
 
 void UnorderedArrayList::print(ostream &out)
 {
-    out << '[';
     for (int i = 0; i < this->size; i++)
     {
-        out << this->buf[i] << " ";
+        out << this->buf[i] << endl;
     }
-    out << ']';
 }
 
 ostream &operator<<(ostream &out, UnorderedList &L)
