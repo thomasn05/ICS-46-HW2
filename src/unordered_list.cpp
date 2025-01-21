@@ -72,6 +72,18 @@ void ListNode::print(ostream &out, ListNode *L)
     out << L->data;
 }
 
+ListNode *ListNode::find(const string &word, ListNode *L)
+{
+    ListNode *temp = L;
+    while (temp)
+    {
+        if (temp->data == word)
+            break;
+        temp = temp->next;
+    }
+    return temp;
+}
+
 UnorderedLinkedList::~UnorderedLinkedList()
 {
     while (this->head)
@@ -85,6 +97,11 @@ UnorderedLinkedList::~UnorderedLinkedList()
 void UnorderedLinkedList::insert(const string &word)
 {
     this->head = new ListNode(word, this->head);
+}
+
+bool UnorderedLinkedList::find(const string &word)
+{
+    return (!ListNode::find(word, this->head));
 }
 
 bool UnorderedLinkedList::is_empty()
@@ -101,9 +118,10 @@ bool UnorderedLinkedList::is_full()
 
 void UnorderedLinkedList::print(ostream &out)
 {
-    while (this->head)
+    ListNode *temp = this->head;
+    while (temp)
     {
-        ListNode::print(out, this->head);
-        this->head = head->next;
+        ListNode::print(out, temp);
+        temp = temp->next;
     }
 }
