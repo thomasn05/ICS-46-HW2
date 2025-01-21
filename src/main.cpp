@@ -2,8 +2,5 @@
 
 int main()
 {
-    UnorderedArrayList x;
-    x.insert("asd");
-    x.insert("asdasd");
-    cout << x;
+    measure_lists("./src/words.txt");
 }
