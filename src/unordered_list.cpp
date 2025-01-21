@@ -74,14 +74,13 @@ void ListNode::print(ostream &out, ListNode *L)
 
 ListNode *ListNode::find(const string &word, ListNode *L)
 {
-    ListNode *temp = L;
-    while (temp)
+    while (L)
     {
-        if (temp->data == word)
+        if (L->data == word)
             break;
-        temp = temp->next;
+        L = L->next;
     }
-    return temp;
+    return L;
 }
 
 void ListNode::delete_list(ListNode *L)
@@ -92,6 +91,13 @@ void ListNode::delete_list(ListNode *L)
         L = L->next;
         delete temp;
     }
+}
+
+void ListNode::remove(const string &word, ListNode *&L)
+{
+    ListNode *result = ListNode::find(word, L);
+    if (!result)
+        result = result->next;
 }
 
 UnorderedLinkedList::~UnorderedLinkedList()
@@ -107,6 +113,11 @@ void UnorderedLinkedList::insert(const string &word)
 bool UnorderedLinkedList::find(const string &word)
 {
     return (!ListNode::find(word, this->head));
+}
+
+void UnorderedLinkedList::remove(const string &word)
+{
+    ListNode::remove(word, this->head);
 }
 
 bool UnorderedLinkedList::is_empty()

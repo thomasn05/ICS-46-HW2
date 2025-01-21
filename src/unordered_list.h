@@ -46,7 +46,7 @@ struct ListNode
     static void print(ostream &out, ListNode *L);
     static ListNode *find(const string &word, ListNode *L);
     static void delete_list(ListNode *L);
-    // static void remove(const string &word, ListNode *&L);
+    static void remove(const string &word, ListNode *&L);
 };
 
 class UnorderedLinkedList : public UnorderedList
@@ -59,7 +59,7 @@ public:
     ~UnorderedLinkedList();
     void insert(const string &word);
     bool find(const string &word);
-    // void remove(const string &word);
+    void remove(const string &word);
     bool is_empty();
     bool is_full();
     void print(ostream &out);
