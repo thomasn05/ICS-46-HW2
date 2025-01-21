@@ -99,7 +99,7 @@ void ListNode::remove(const string &word, ListNode *&L)
     if (!result)
         return;
 
-    L = L->next;
+    L = result->next;
     delete result;
 }
 
