@@ -36,7 +36,7 @@ void UnorderedArrayList::remove(const string &word)
 {
     int index = this->find_index(word);
 
-    if (index)
+    if (index >= 0)
     {
         this->buf[index] = this->buf[this->size - 1];
         this->size--;
@@ -69,7 +69,7 @@ ostream &operator<<(ostream &out, UnorderedList &L)
 
 void ListNode::print(ostream &out, ListNode *L)
 {
-    out << L->data;
+    out << L->data << endl;
 }
 
 ListNode *ListNode::find(const string &word, ListNode *L)
