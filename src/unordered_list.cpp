@@ -84,14 +84,19 @@ ListNode *ListNode::find(const string &word, ListNode *L)
     return temp;
 }
 
-UnorderedLinkedList::~UnorderedLinkedList()
+void ListNode::delete_list(ListNode *L)
 {
-    while (this->head)
+    while (L)
     {
-        ListNode *temp = this->head;
-        this->head = head->next;
+        ListNode *temp = L;
+        L = L->next;
         delete temp;
     }
+}
+
+UnorderedLinkedList::~UnorderedLinkedList()
+{
+    ListNode::delete_list(this->head);
 }
 
 void UnorderedLinkedList::insert(const string &word)

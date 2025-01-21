@@ -45,7 +45,7 @@ struct ListNode
     ListNode(string new_data, ListNode *new_next) : data(new_data), next(new_next) {}
     static void print(ostream &out, ListNode *L);
     static ListNode *find(const string &word, ListNode *L);
-    // static void delete_list(ListNode *L);
+    static void delete_list(ListNode *L);
     // static void remove(const string &word, ListNode *&L);
 };
 
