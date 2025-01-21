@@ -97,7 +97,10 @@ void ListNode::remove(const string &word, ListNode *&L)
 {
     ListNode *result = ListNode::find(word, L);
     if (!result)
-        result = result->next;
+        return;
+
+    delete result;
+    L = L->next;
 }
 
 UnorderedLinkedList::~UnorderedLinkedList()
