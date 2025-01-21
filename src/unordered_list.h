@@ -1,5 +1,6 @@
 #include <string>
 #include <iostream>
+#include <fstream>
 using namespace std;
 constexpr int NWORDS = 45392;
 
@@ -67,9 +68,9 @@ public:
 
 ostream &operator<<(ostream &out, UnorderedList &L);
 
-// void error(string word, string msg);
-// void insert_all_words(int k, string file_name, UnorderedList &L);
-// void find_all_words(int k, striung file_name, UnorderedList &L);
-// void remove_all_words(int k, string file_name, UnorderedList &L);
-// void measure_UnorderedList_methods(string file_name, UnorderedList &L);
-// void measure_lists(string input_file);
+void error(string word, string msg);
+void insert_all_words(int k, string file_name, UnorderedList &L);
+void find_all_words(int k, string file_name, UnorderedList &L);
+void remove_all_words(int k, string file_name, UnorderedList &L);
+void measure_UnorderedList_methods(string file_name, UnorderedList &L);
+void measure_lists(string input_file);

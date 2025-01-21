@@ -1,4 +1,4 @@
-// #include "Timer.h"
+#include "Timer.h"
 #include "unordered_list.h"
 
 int UnorderedArrayList::find_index(const string &word)
@@ -99,8 +99,8 @@ void ListNode::remove(const string &word, ListNode *&L)
     if (!result)
         return;
 
-    delete result;
     L = L->next;
+    delete result;
 }
 
 UnorderedLinkedList::~UnorderedLinkedList()
@@ -143,4 +143,73 @@ void UnorderedLinkedList::print(ostream &out)
         ListNode::print(out, temp);
         temp = temp->next;
     }
+}
+
+void error(string word, string msg)
+{
+    cout << word << " " << msg << endl;
+}
+
+void insert_all_words(int k, string file_name, UnorderedList &L)
+{
+    Timer t;
+    double eTime;
+    ifstream in(file_name);
+    int limit = k * NWORDS / 10;
+    t.start();
+    for (string word; (in >> word) && limit > 0; --limit)
+        L.insert(word);
+    t.elapsedUserTime(eTime);
+    in.close();
+    cout << "\t\tI = " << eTime << endl;
+}
+
+void find_all_words(int k, string file_name, UnorderedList &L)
+{
+    Timer t;
+    double eTime;
+    ifstream in(file_name);
+    int limit = k * NWORDS / 10;
+    t.start();
+    for (string word; (in >> word) && limit > 0; --limit)
+        L.find(word);
+    t.elapsedUserTime(eTime);
+    in.close();
+    cout << "\t\tF = " << eTime << endl;
+}
+
+void remove_all_words(int k, string file_name, UnorderedList &L)
+{
+    Timer t;
+    double eTime;
+    ifstream in(file_name);
+    int limit = k * NWORDS / 10;
+    t.start();
+    for (string word; (in >> word) && limit > 0; --limit)
+        L.remove(word);
+    t.elapsedUserTime(eTime);
+    in.close();
+    cout << "\t\tR = " << eTime << endl;
+}
+
+void measure_UnorderedList_methods(string file_name, UnorderedList &L)
+{
+    cout << L.name << endl;
+    for (int k = 1; k <= 10; k++)
+    {
+        cout << "\tK = " << k << endl;
+        insert_all_words(k, file_name, L);
+        find_all_words(k, file_name, L);
+        remove_all_words(k, file_name, L);
+        if (!L.is_empty())
+            error(L.name, "is not empty");
+    }
+}
+
+void measure_lists(string input_file)
+{
+    UnorderedArrayList AL;
+    UnorderedLinkedList LL;
+    measure_UnorderedList_methods(input_file, AL);
+    measure_UnorderedList_methods(input_file, LL);
 }
