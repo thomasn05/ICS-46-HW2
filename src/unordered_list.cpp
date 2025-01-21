@@ -112,7 +112,7 @@ void UnorderedLinkedList::insert(const string &word)
 
 bool UnorderedLinkedList::find(const string &word)
 {
-    return (!ListNode::find(word, this->head));
+    return ListNode::find(word, this->head);
 }
 
 void UnorderedLinkedList::remove(const string &word)
